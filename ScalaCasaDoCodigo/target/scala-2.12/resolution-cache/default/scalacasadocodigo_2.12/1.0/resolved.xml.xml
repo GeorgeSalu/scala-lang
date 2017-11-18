@@ -4,7 +4,7 @@
 		module="scalacasadocodigo_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20171112123118"
+		publication="20171118203838"
 	>
 		<description>
 		ScalaCasaDoCodigo
@@ -32,5 +32,7 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.2" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.12.2" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="joda-time" name="joda-time" rev="2.9.2" conf="compile->default(compile)"/>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.12" rev="1.0.6" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
