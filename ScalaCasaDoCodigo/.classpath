@@ -2,6 +2,81 @@
   <classpathentry kind="src" path="src\main\scala"/>
   <classpathentry kind="src" path="src\test\scala"/>
   <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"></classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\com.typesafe\config\srcs\config-1.3.0-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\com.typesafe\config\bundles\config-1.3.0.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\com.typesafe\config\docs\config-1.3.0-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\joda-time\joda-time\srcs\joda-time-2.9.4-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\joda-time\joda-time\jars\joda-time-2.9.4.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\joda-time\joda-time\docs\joda-time-2.9.4-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\srcs\scala-xml_2.11-1.0.5-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\bundles\scala-xml_2.11-1.0.5.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\docs\scala-xml_2.11-1.0.5-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.specs2\specs2-core_2.11\srcs\specs2-core_2.11-3.8.5-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.specs2\specs2-core_2.11\jars\specs2-core_2.11-3.8.5.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.specs2\specs2-core_2.11\docs\specs2-core_2.11-3.8.5-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.specs2\specs2-matcher_2.11\srcs\specs2-matcher_2.11-3.8.5-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.specs2\specs2-matcher_2.11\jars\specs2-matcher_2.11-3.8.5.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.specs2\specs2-matcher_2.11\docs\specs2-matcher_2.11-3.8.5-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.specs2\specs2-common_2.11\srcs\specs2-common_2.11-3.8.5-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.specs2\specs2-common_2.11\jars\specs2-common_2.11-3.8.5.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.specs2\specs2-common_2.11\docs\specs2-common_2.11-3.8.5-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.specs2\specs2-codata_2.11\srcs\specs2-codata_2.11-3.8.5-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.specs2\specs2-codata_2.11\jars\specs2-codata_2.11-3.8.5.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.specs2\specs2-codata_2.11\docs\specs2-codata_2.11-3.8.5-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.scalaz\scalaz-core_2.11\srcs\scalaz-core_2.11-7.2.6-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.scalaz\scalaz-core_2.11\bundles\scalaz-core_2.11-7.2.6.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.scalaz\scalaz-core_2.11\docs\scalaz-core_2.11-7.2.6-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.scalaz\scalaz-effect_2.11\srcs\scalaz-effect_2.11-7.2.6-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.scalaz\scalaz-effect_2.11\bundles\scalaz-effect_2.11-7.2.6.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.scalaz\scalaz-effect_2.11\docs\scalaz-effect_2.11-7.2.6-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.scalaz\scalaz-concurrent_2.11\srcs\scalaz-concurrent_2.11-7.2.6-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.scalaz\scalaz-concurrent_2.11\bundles\scalaz-concurrent_2.11-7.2.6.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.scalaz\scalaz-concurrent_2.11\docs\scalaz-concurrent_2.11-7.2.6-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.11\srcs\scala-parser-combinators_2.11-1.0.4-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.11\bundles\scala-parser-combinators_2.11-1.0.4.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.11\docs\scala-parser-combinators_2.11-1.0.4-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.specs2\specs2-mock_2.11\srcs\specs2-mock_2.11-3.8.5-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.specs2\specs2-mock_2.11\jars\specs2-mock_2.11-3.8.5.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.specs2\specs2-mock_2.11\docs\specs2-mock_2.11-3.8.5-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.hamcrest\hamcrest-core\srcs\hamcrest-core-1.3-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.hamcrest\hamcrest-core\jars\hamcrest-core-1.3.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.hamcrest\hamcrest-core\docs\hamcrest-core-1.3-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.mockito\mockito-core\srcs\mockito-core-1.9.5-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.mockito\mockito-core\jars\mockito-core-1.9.5.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.mockito\mockito-core\docs\mockito-core-1.9.5-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="C:\Users\george\.ivy2\cache\org.objenesis\objenesis\srcs\objenesis-1.0-sources.jar" kind="lib" path="C:\Users\george\.ivy2\cache\org.objenesis\objenesis\jars\objenesis-1.0.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:C:\Users\george\.ivy2\cache\org.objenesis\objenesis\docs\objenesis-1.0-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="output" path="bin"/>
 </classpath>
