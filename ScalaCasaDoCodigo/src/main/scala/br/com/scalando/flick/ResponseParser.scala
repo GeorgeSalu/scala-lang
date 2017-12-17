@@ -1,15 +1,16 @@
 package br.com.scalando.flick
 
 import br.com.scalando.model.Foto
+import com.typesafe.config.Config
 
 sealed trait ResponseParser {
-    def parse(str: String): Seq[Foto]
+  def parse(str: String): Seq[Foto]
 }
 
-final class XmlParser extends ResponseParser {
-    override def parse(str: String): Seq[Foto] = ???
+final class XmlFlickrParser extends ResponseParser {
+  override def parse(str: String): Seq[Foto] = ???
 }
 
-object XmlParser {
-    def fromConfig(): XmlParser = new XmlParser()
+object XmlFlickrParser {
+  def fromConfig(config: Config): XmlFlickrParser = new XmlFlickrParser()
 }

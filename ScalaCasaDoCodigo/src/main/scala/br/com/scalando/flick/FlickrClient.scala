@@ -8,8 +8,8 @@ import br.com.scalando.model.Foto
 
 class FlickrClient(apiKey: String, baseUrl: String, httpClient: HttpClient, responseParser: ResponseParser) {
 
-    def buscaFotos(tag: String): Seq[Foto] = {
- 
+    def buscaFotos(tags: List[String]): Seq[Foto] = {
+
         ???
     }
 }
@@ -21,6 +21,6 @@ object FlickrClient {
         val apiKey = config.getString("flickr.api.key")
         val baseUrl = config.getString("flickr.api.baseurl")
 
-        new FlickrClient(apiKey, baseUrl, HttpClient.fromConfig(), XmlParser.fromConfig())
+        new FlickrClient(apiKey, baseUrl, HttpClient.fromConfig(), XmlFlickrParser.fromConfig(config))
     }
 }
