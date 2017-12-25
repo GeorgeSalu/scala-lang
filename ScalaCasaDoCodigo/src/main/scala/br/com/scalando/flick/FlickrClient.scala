@@ -8,9 +8,13 @@ import br.com.scalando.model.Foto
 
 class FlickrClient(apiKey: String, baseUrl: String, httpClient: HttpClient, responseParser: ResponseParser) {
 
+    // TODO: usar Either para tratar error e evitar precisar lançar excessões ....
     def buscaFotos(tags: List[String]): Seq[Foto] = {
+        val url = s"$baseUrl?method=$searchMethod&api_key=$apiKey&tags=${tags.mkString(",")}"
 
-        ???
+        val response = httpClient.get(url)
+
+        responseParser.parse(response)
     }
 }
 
