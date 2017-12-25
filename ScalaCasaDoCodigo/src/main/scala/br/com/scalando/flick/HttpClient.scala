@@ -2,9 +2,6 @@ package br.com.scalando.flick
 
 import scala.util.control.NonFatal
 
-/**
- * A very simple Http client, that only do GET requests.
- */
 class HttpClient {
     import HttpClient._
 

@@ -7,18 +7,22 @@ import FlickrClient._
 import br.com.scalando.model.Foto
 
 class FlickrClient(apiKey: String, baseUrl: String, httpClient: HttpClient, responseParser: ResponseParser) {
+    import FlickrClient._
 
-    // TODO: usar Either para tratar error e evitar precisar lançar excessões ....
-    def buscaFotos(tags: List[String]): Seq[Foto] = {
+    def buscaFotos(tags: List[String]): Either[FlickrError, Seq[Foto]] = {
         val url = s"$baseUrl?method=$searchMethod&api_key=$apiKey&tags=${tags.mkString(",")}"
 
         val response = httpClient.get(url)
 
-        responseParser.parse(response)
+        response.fold(
+            (err) => Left(FlickrError(err.msg)),
+            (resp) => Right(responseParser.parse(resp.body)))
     }
 }
 
 object FlickrClient {
+    case class FlickrError(msg: String)
+
     val searchMethod = "flickr.photos.search"
 
     def fromConfig(config: Config): FlickrClient = {
