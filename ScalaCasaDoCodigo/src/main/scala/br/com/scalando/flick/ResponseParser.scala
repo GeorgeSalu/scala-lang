@@ -5,14 +5,19 @@ import com.typesafe.config.Config
 
 import scala.xml.XML
 
+import scala.xml.XML
+
 sealed trait ResponseParser {
     def parse(str: String): Seq[Foto]
 }
 
+// TODO: model error codes (https://www.flickr.com/services/api/flickr.photos.search.html)
+// TODO: probably should have generic Response models, to be used by the specific parser's implementations
 
 final class XmlFlickrParser extends ResponseParser {
     import ResponseParser._
 
+    // TOOD: proper error handling in the parsing below
     override def parse(xmlStr: String): Seq[Foto] =
         (XML.loadString(xmlStr) \\ "photo").map { photoXml =>
             Foto(
@@ -36,7 +41,6 @@ final class JsonFlickrParser extends ResponseParser {
 }
 
 object ResponseParser {
-
     def flickrBoolean(rawAttribute: String): Boolean =
         rawAttribute.toInt match {
             case 1 => true
@@ -48,6 +52,7 @@ object ResponseParser {
         parser match {
             case "xml" => new XmlFlickrParser()
             case "json" => new JsonFlickrParser()
+            // the config could be wrongly set by the user, so we default here to use the xml parser
             case _ => new XmlFlickrParser()
         }
     }
