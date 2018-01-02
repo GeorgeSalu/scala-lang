@@ -2,12 +2,13 @@ package br.com.scalando.flick
 
 import scala.util.control.NonFatal
 
+
 class HttpClient {
     import HttpClient._
 
     def get(url: String): Either[GetError, GetResponse] = try {
         val body = scala.io.Source.fromURL(url).getLines().mkString("\n")
-        // the Source API doesn't allow us to inspect the actual code returned by the server
+
         Right(GetResponse(200, body))
 
     } catch {

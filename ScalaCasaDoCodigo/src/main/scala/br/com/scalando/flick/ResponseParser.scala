@@ -7,19 +7,27 @@ import scala.xml.XML
 
 import scala.xml.XML
 
-sealed trait ResponseParser {
-    def parse(str: String): Seq[Foto]
-}
+import scala.xml.{ Elem, XML }
 
-// TODO: model error codes (https://www.flickr.com/services/api/flickr.photos.search.html)
-// TODO: probably should have generic Response models, to be used by the specific parser's implementations
+sealed trait ResponseParser {
+    def parse(xmlStr: String): Either[FlickrError, Seq[Foto]]
+}
 
 final class XmlFlickrParser extends ResponseParser {
     import ResponseParser._
 
-    // TOOD: proper error handling in the parsing below
-    override def parse(xmlStr: String): Seq[Foto] =
-        (XML.loadString(xmlStr) \\ "photo").map { photoXml =>
+    override def parse(xmlStr: String): Either[FlickrError, Seq[Foto]] = {
+        val xml = XML.loadString(xmlStr)
+
+        (xml \\ "rsp" \ "@stat").text match {
+            case "ok" => Right(processSuccess(xml))
+            case `failStat` => Left(processFailure(xml))
+            case _ => Left(FlickrUnknownError(unknownFlickrResp))
+        }
+    }
+
+    def processSuccess(xml: Elem): Seq[Foto] =
+        (xml \\ "photo").map { photoXml =>
             Foto(
                 (photoXml \ "@id").text,
                 (photoXml \ "@owner").text,
@@ -31,16 +39,30 @@ final class XmlFlickrParser extends ResponseParser {
                 flickrBoolean((photoXml \ "@isfriend").text),
                 flickrBoolean((photoXml \ "@isfamily").text))
         }
+
+    def processFailure(xml: Elem): FlickrError =
+        (xml \\ "err").map { errXml =>
+            FlickrKnownError(
+                (errXml \ "@code").text.toInt,
+                (errXml \ "@msg").text)
+        }.headOption.getOrElse(
+            FlickrUnknownError(errNotFound))
 }
 
 final class JsonFlickrParser extends ResponseParser {
     /**
      * Implementing this is left as an exercise for the reader.
      */
-    override def parse(str: String): Seq[Foto] = ???
+    def parse(xmlStr: String): Either[FlickrError, Seq[Foto]] = ???
 }
 
 object ResponseParser {
+    val okStat = "ok"
+    val failStat = "fail"
+
+    val unknownFlickrResp = "Could not parse Flickr response"
+    val errNotFound = "Could not parser Flickr error response"
+
     def flickrBoolean(rawAttribute: String): Boolean =
         rawAttribute.toInt match {
             case 1 => true
@@ -57,3 +79,7 @@ object ResponseParser {
         }
     }
 }
+
+sealed trait FlickrError
+final case class FlickrKnownError(code: Int, msg: String) extends FlickrError
+final case class FlickrUnknownError(msg: String) extends FlickrError
